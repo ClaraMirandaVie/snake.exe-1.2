@@ -1,115 +1,114 @@
 # snake.exe 1.2
-Primeiro projeto autoral de portfólio, desenvolvido para aprender e praticar os fundamentos da programação web.
 
-**Jogue agora:** [Acessar o jogo](https://claramirandavie.github.io/snake.exe-1.2/)
+My first original portfolio project, developed to learn and practice the fundamentals of web development.
+**Play Now:** [Play the Game](https://claramirandavie.github.io/snake.exe-1.2/)
 
-## Funcionalidades
-- **Modo Classic:** três níveis de dificuldade (Easy, Normal e Hard), cada um com velocidades diferentes.
-- **Sistema de pausa:** menu com as opções Resume, Restart e Main Menu. A partida fica completamente congelada durante a pausa.
-- **Recordes locais:** pontuações mais altas salvas separadamente por dificuldade.
-- **Ranking online:** Top 10 por dificuldade, utilizando banco de dados na nuvem.
-- **Skins:** quatro aparências para a cobrinha: Default (ciano), Pink, Lime e White.
-- **Áudio:** efeitos sonoros e música gerados por código através da Web Audio API.
-- **Configurações:** controle individual de volume geral, efeitos sonoros e música.
-- **Estatísticas:** partidas realizadas e concluídas, maior pontuação, total de comidas coletadas, maior comprimento e melhores resultados.
-- **Persistência de dados:** nome do jogador, recordes, skin selecionada, configurações e estatísticas salvos automaticamente no navegador através do LocalStorage.
+## Features
+- **Classic Mode:** Three difficulty levels (Easy, Normal, and Hard), each with different movement speeds.
+- **Pause System:** An in-game menu with Resume, Restart, and Main Menu options. Gameplay is completely frozen while paused.
+- **Local High Scores:** Best scores saved separately for each difficulty level.
+- **Online Leaderboard:** Global Top 10 rankings for each difficulty, powered by a cloud database.
+- **Snake Skins:** Four visual styles for the snake: Default (Cyan), Pink, Lime, and White.
+- **Audio:** Sound effects and background music procedurally generated using the Web Audio API.
+- **Settings:** Individual volume controls for master volume, sound effects, and music.
+- **Statistics:** Tracks games played and completed, highest score, total food collected, longest snake length, and best results.
+- **Data Persistence:** Player name, high scores, selected skin, settings, and statistics are automatically saved in the browser using LocalStorage.
 
-## Como jogar
-| Tecla | Ação |
+## How to Play
+| Key | Action |
 |---|---|
-| ← ↑ → ↓ | Movimentar a cobrinha |
-| `Esc` ou `P` | Pausar / continuar |
+| ← ↑ → ↓ | Move the snake |
+| `Esc` or `P` | Pause / Resume |
 
-### Regras
-- A cobrinha começa com três segmentos.
-- Cada comida coletada vale **10 pontos** e aumenta o comprimento da cobrinha.
-- Colidir com as paredes ou com o próprio corpo encerra a partida.
-- Não é possível inverter a direção diretamente.
-- É permitido mover-se para a posição que a cauda está deixando, pois ela sai daquele espaço no mesmo passo.
+### Rules
+- The snake starts with three segments.
+- Each food item collected awards **10 points** and increases the snake's length.
+- Colliding with walls or the snake's own body ends the game.
+- Directly reversing the snake's direction is not allowed.
+- Moving into the position currently occupied by the tail is allowed, since the tail moves away from that position during the same game update.
 
-## Tecnologias utilizadas
-- **HTML5:** estrutura das telas.
-- **CSS3:** identidade visual, variáveis CSS e animações.
-- **JavaScript (ES Modules):** lógica do jogo, organizada em módulos.
-- **Canvas API:** renderização da cobrinha e dos alimentos.
-- **Web Audio API:** geração de efeitos sonoros e música.
-- **LocalStorage:** armazenamento de dados no navegador.
-- **Supabase (PostgreSQL):** banco de dados utilizado no ranking online, integrado através de requisições `fetch`.
+## Technologies Used
+- **HTML5:** Interface structure and game screens.
+- **CSS3:** Visual identity, CSS variables, and animations.
+- **JavaScript (ES Modules):** Game logic organized into separate modules.
+- **Canvas API:** Rendering the snake and food.
+- **Web Audio API:** Procedural sound effects and background music.
+- **LocalStorage:** Browser-based data persistence.
+- **Supabase (PostgreSQL):** Online leaderboard database, integrated through `fetch` requests.
 
-## Estrutura do projeto
-```
-snake-game/
-├── index.html
-├── README.md
-├── supabase-setup.sql
-├── css/
-│   └── style.css
-├── js/
-│   ├── main.js
-│   ├── menu.js
-│   ├── game.js
-│   ├── snake.js
-│   ├── food.js
-│   ├── audio.js
-│   ├── settings.js
-│   ├── skins.js
-│   ├── statistics.js
-│   ├── player.js
-│   ├── ranking.js
-│   ├── config.js
-│   └── storage.js
-└── assets/
-    ├── images/
-    └── sounds/
-```
-O projeto utiliza uma arquitetura modular, na qual cada arquivo possui uma responsabilidade específica. Os módulos se comunicam através de `import` e `export`, facilitando a organização e a manutenção do código.
+## Project Structure
+    snake-game/
+    ├── index.html
+    ├── README.md
+    ├── supabase-setup.sql
+    ├── css/
+    │   └── style.css
+    ├── js/
+    │   ├── main.js
+    │   ├── menu.js
+    │   ├── game.js
+    │   ├── snake.js
+    │   ├── food.js
+    │   ├── audio.js
+    │   ├── settings.js
+    │   ├── skins.js
+    │   ├── statistics.js
+    │   ├── player.js
+    │   ├── ranking.js
+    │   ├── config.js
+    │   └── storage.js
+    └── assets/
+        ├── images/
+        └── sounds/
+The project follows a modular architecture, where each file has a specific responsibility. Modules communicate through `import` and `export`, making the code easier to organize, maintain, and expand.
 
-## Como executar localmente
-O projeto utiliza **JavaScript ES Modules**, que não funcionam corretamente quando o arquivo `index.html` é aberto diretamente pelo navegador.
-Para executar o projeto localmente:
-1. Instale o [Visual Studio Code](https://code.visualstudio.com/).
-2. Instale a extensão **Live Server**.
-3. Abra a pasta do projeto no VS Code.
-4. Clique com o botão direito no arquivo `index.html`.
-5. Selecione **Open with Live Server**.
+## Running Locally
+This project uses **JavaScript ES Modules**, which do not work correctly when `index.html` is opened directly in the browser using the `file://` protocol.
+To run the project locally:
+1. Install [Visual Studio Code](https://code.visualstudio.com/).
+2. Install the **Live Server** extension.
+3. Open the project folder in VS Code.
+4. Right-click the `index.html` file.
+5. Select **Open with Live Server**.
+The game will automatically open in your browser.
 
-O jogo será aberto automaticamente no navegador.
+## Setting Up the Online Leaderboard (Optional)
+The game works normally without Supabase configuration. In this case, only the online leaderboard will be unavailable.
+To enable it:
+1. Create an account and a project on [Supabase](https://supabase.com/).
+2. Open the **SQL Editor** and execute the contents of `supabase-setup.sql`.
+3. Under **Connect** or **Project Settings → API Keys**, copy your Project URL and public publishable key (`sb_publishable_...`).
+4. Add both values to `js/config.js`.
 
-## Configurando o ranking online (opcional)
-O jogo funciona normalmente mesmo sem a configuração do Supabase. Nesse caso, apenas o ranking online ficará indisponível.
-Para habilitá-lo:
-1. Crie uma conta e um projeto no [Supabase](https://supabase.com/).
-2. Acesse o **SQL Editor** e execute o conteúdo do arquivo `supabase-setup.sql`.
-3. Em **Connect** ou **Project Settings → API Keys**, copie a Project URL e a chave pública publishable (`sb_publishable_...`).
-4. Insira os dois valores no arquivo `js/config.js`.
+### Leaderboard Security
+The leaderboard uses **Row Level Security (RLS)** to control database access.
+- Public users can retrieve and submit scores.
+- Existing scores cannot be updated or deleted.
+- The database validates submitted data, including player names between 1 and 12 characters, valid difficulty levels, and scores between 0 and 3970 in increments of 10.
 
-### Segurança do ranking
-O ranking utiliza **Row Level Security (RLS)** para controlar o acesso ao banco de dados.
-- O público pode consultar e inserir pontuações.
-- Não é permitido editar ou excluir pontuações existentes.
-- O banco valida os dados enviados, incluindo nome de 1 a 12 caracteres, dificuldade válida e pontuação entre 0 e 3970, em múltiplos de 10.
+## What I Learned
+Throughout this project, I practiced and improved my knowledge of:
+- Code organization using JavaScript modules (`import` and `export`).
+- Game loops using `requestAnimationFrame`.
+- Time management and game speed control.
+- Implementing input queues to control movement.
+- Graphics rendering using the Canvas API.
+- Event handling and *event delegation*.
+- Data storage and persistence with LocalStorage.
+- Audio generation using the Web Audio API.
+- Relational database integration with PostgreSQL.
+- Communication with external services through HTTP requests.
+- Basic web security practices, including XSS prevention using `textContent` and credential protection.
 
-## O que aprendi desenvolvendo este projeto
-Durante o desenvolvimento, pratiquei e aprofundei conhecimentos em:
-- Organização de código utilizando módulos JavaScript (`import` e `export`).
-- Desenvolvimento de loops de jogo com `requestAnimationFrame`.
-- Controle de tempo e velocidade de execução.
-- Implementação de filas de comandos para controlar a movimentação.
-- Renderização gráfica utilizando a Canvas API.
-- Manipulação de eventos e *event delegation*.
-- Armazenamento e persistência de dados com LocalStorage.
-- Geração de áudio utilizando a Web Audio API.
-- Integração com banco de dados relacional PostgreSQL.
-- Comunicação com serviços externos através de requisições HTTP.
-- Segurança básica no desenvolvimento web, incluindo prevenção de XSS com `textContent` e proteção de credenciais.
+## Known Limitations
+- **Leaderboard:** Although the database validates incoming data, the game logic runs entirely in the browser, making it possible to manipulate scores within the allowed limits. Reliable score validation would require running the game logic on a server.
+- **Duplicate Names:** When multiple players use the same name, the leaderboard only keeps their highest score.
+- **Device Compatibility:** The game was primarily designed for desktop computers, with keyboard-based controls.
 
-## Limitações conhecidas
-- **Ranking:** embora o banco valide os dados recebidos, como a lógica do jogo é executada no navegador, ainda é possível manipular pontuações dentro dos limites permitidos. Uma validação completamente confiável exigiria executar a lógica do jogo em um servidor.
-- **Nomes repetidos:** quando duas pessoas utilizam o mesmo nome, o ranking considera apenas a melhor pontuação.
-- **Dispositivos:** o jogo foi desenvolvido pensando principalmente em computadores, com controles por teclado.
+## Future Updates
+- **Zen Mode:** A mode with constant, reduced speed and no pressure.
+- **Challenge Mode:** Levels featuring obstacles and specific objectives.
+- Background music using audio files.
+- Touch controls for mobile devices.
 
-## Próximas atualizações
-- [ ] **Zen Mode:** modo com velocidade constante e reduzida, sem pressão.
-- [ ] **Challenge Mode:** fases com obstáculos e objetivos específicos.
-- [ ] Música de fundo utilizando arquivos de áudio.
-- [ ] Controles por toque para dispositivos móveis.
+      
