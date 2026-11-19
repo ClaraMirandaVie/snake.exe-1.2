@@ -1,7 +1,7 @@
 # snake.exe 1.2
 Primeiro projeto autoral de portfólio, desenvolvido para aprender e praticar os fundamentos da programação web.
 
-**Jogue agora:** [Acessar o jogo](COLOQUE_O_LINK_DO_JOGO_AQUI)
+**Jogue agora:** [Acessar o jogo](https://claramirandavie.github.io/snake.exe-1.2/)
 
 ## Funcionalidades
 - **Modo Classic:** três níveis de dificuldade (Easy, Normal e Hard), cada um com velocidades diferentes.
